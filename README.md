@@ -107,6 +107,20 @@ For example, if you want to skip a message which matches some pattern:
 
 It executes pattern matching against a value related with `key` and skip emitting the message if it matches.
 
+### rule: filter
+
+Drop and do not re-emit any packets which do not match a rule:
+
+```
+<rule>
+  key     status
+  pattern ^200$
+  filter  true
+</rule>
+```
+
+It executes pattern matching against a value related with `key` and skips emitting the message if it does not match.
+
 ### rule: append_to_tag
 
 ```
